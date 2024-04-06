@@ -1,0 +1,122 @@
+<div class="options">
+	<div collapsible class="group">
+		<h2>Preferences</h2>
+		<div class="row">
+			<label for="RIFE-dialog">RIFE folder</label>
+			<button id="RIFE-dialog">select</button>
+		</div>
+		<div class="row">
+			<label id="RIFE-location">/Applications/EnhanceVideo/EVTool</label>
+		</div>
+		<div class="row">
+			<label for="ESRGAN-dialog">ESRGAN folder</label>
+			<button id="ESRGAN-dialog">select</button>
+		</div>
+		<div class="row">
+			<label id="ESRGAN-location">/Applications/EnhanceVideo/EVTool</label>
+		</div>
+		<div class="row">
+			<label for="FFmpeg-dialog">FFmpeg binary</label>
+			<button id="FFmpeg-dialog">select</button>
+		</div>
+		<div class="row">
+			<label id="FFmpeg-location">/Applications/EnhanceVideo/EVTool/FFmpeg</label>
+		</div>
+	</div>
+	<div collapsible class="group">
+		<h2>File Options</h2>
+		<div class="row">
+			<label for="input-type">input type</label>
+			<select id="input-type">
+				<option value="image">single image</option>
+				<option value="sequence">image sequence</option>
+				<option value="video">video</option>
+			</select>
+		</div>
+		<div class="row">
+			<label for="output-format">output format</label>
+			<select id="output-format">
+				<option value="sequence">image sequence</option>
+				<option value="universal">video for sharing</option>
+				<option value="lossless">near-lossless video</option>
+			</select>
+		</div>
+		<div class="row">
+			<label for="input-batch">batch process</label>
+			<input id="input-batch" type="checkbox" />
+		</div>
+		<div class="row">
+			<label for="input-dialog">input location</label>
+			<button id="input-dialog">select</button>
+		</div>
+		<div class="row">
+			<label id="input-location">none selected</label>
+		</div>
+		<div class="row">
+			<label for="output-dialog">output location</label>
+			<button id="output-dialog">select</button>
+		</div>
+		<div class="row">
+			<label id="output-location">none selected</label>
+		</div>
+	</div>
+	<div collapsible class="group">
+		<h2>Processing Options</h2>
+		<div class="row">
+			<label for="ESRGAN-model">upscaler model</label>
+			<select id="ESRGAN-model">
+				<option value=null>disabled</option>
+			</select>
+		</div>
+		<div class="row">
+			<label for="downscale-height">downscale height</label>
+			<input id="downscale-height" type="number" min="0" step="1" value="0" />
+		</div>
+		<div class="row">
+			<label for="input-FPS">input FPS</label>
+			<input id="input-FPS" type="number" min="0" step="1" value="0" />
+		</div>
+		<div class="row">
+			<label for="RIFE-model">interpolator model</label>
+			<select id="RIFE-model">
+				<option value=null>disabled</option>
+			</select>
+		</div>
+		<div class="row">
+			<label for="inter-iter">interpolation factor</label>
+			<select id="inter-iter">
+				<option value=1>2 x</option>
+				<option value=2>4 x</option>
+				<option value=3>8 x</option>
+				<option value=4>16 x</option>
+				<option value=5>32 x</option>
+			</select>
+		</div>
+		<div class="row">
+			<label for="blur-type">motion blur type</label>
+			<select id="blur-type">
+				<option value=null>disabled</option>
+				<option value="plain">plain</option>
+				<option value="smooth">smooth</option>
+				<option value="trail">trail</option>
+			</select>
+		</div>
+		<div class="row">
+			<label for="blur-range">motion blur rangle</label>
+			<input id="blur-range" type="number" min="0" step="1" value="0" />
+		</div>
+		<div class="row">
+			<label for="output-FPS">output FPS</label>
+			<input id="output-FPS" type="number" min="0" step="1" value="1" />
+		</div>
+		<div class="row">
+			<label for="reduce-FPS">reduce FPS</label>
+			<input id="reduce-FPS" type="number" min="0" step="1" value="1" />
+		</div>
+	</div>
+	<div class="row">
+		<button id="execute" class="main">execute</button>
+	</div>
+</div>
+<div class="content">
+</div>
