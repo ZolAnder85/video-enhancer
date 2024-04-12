@@ -8,9 +8,9 @@ then
 	read -p "To what FPS should we downsample? (30) " rFPS
 	read -p "Should intermediate data be cleaned up? (yes) " cleanup
 	read -p "Should near-lossless video encoding be used? (no) " lossless
-	read -p "What is the input folder or video? (input.mp4) " input
-	read -p "What should the output be named? (output.mp4) " output
-elif [[ $10 == "" ]]
+	read -p "What is the input folder for scenes? (input) " input
+	read -p "How should the output name end? (output.mp4) " output
+elif [[ ${10} == "" ]]
 then
 	echo "Usage:"
 	echo "enhace-scenes"
@@ -26,7 +26,7 @@ else
 	cleanup=$7
 	lossless=$8
 	input=$9
-	output=$10
+	output=${10}
 fi
 
 upscaler=${upscaler:-"none"}
@@ -37,12 +37,12 @@ mBlur=${mBlur:-"0"}
 rFPS=${rFPS:-"30"}
 cleanup=${cleanup:-"yes"}
 lossless=${lossless:-"no"}
-input=${input:-"input.mp4"}
-output=${output:-"output.mp4"}
+input=${input:-"input"}
+output=${input:-"output.mp4"}
 
-rm -rf "$input/.DS*"
+rm -rf "$input"/.DS*
 
-for scene in "$input/*"
+for scene in "$input"/*
 do
-	./enhance-video.sh "$upscaler" "$downscale" "$iCount" "$tFPS" "$mBlur" "$rFPS" "$cleanup" "$lossless" "$scene" "$scene-enhance-scenes-output.mp4"
+	./enhance-video.sh "$upscaler" "$downscale" "$iCount" "$tFPS" "$mBlur" "$rFPS" "$cleanup" "$lossless" "$scene" "$scene-$output"
 done

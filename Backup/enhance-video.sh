@@ -10,7 +10,7 @@ then
 	read -p "Should near-lossless video encoding be used? (no) " lossless
 	read -p "What is the input folder or video? (input.mp4) " input
 	read -p "What should the output be named? (output.mp4) " output
-elif [[ $10 == "" ]]
+elif [[ ${10} == "" ]]
 then
 	echo "Usage:"
 	echo "enhace-video"
@@ -26,7 +26,7 @@ else
 	cleanup=$7
 	lossless=$8
 	input=$9
-	output=$10
+	output=${10}
 fi
 
 if [[ $upscaler == "none" ]]
@@ -54,14 +54,14 @@ if [[ -f "$input" ]]
 then
 	ffmpeg -i "$input" "$current/%08d.png"
 else
-	cp "$input/*.png" "$current"
+	cp "$input"/*.png "$current"
 fi
 
 if [[ $upscaler ]]
 then
 	next="enhace-video-upscaled"
 	mkdir "$next"
-	./realesrgan-ncnn-vulkan -i "$current" -o "$next" -n "$upscaler"
+	../Tool/realesrgan-ncnn-vulkan -i "$current" -o "$next" -n "$upscaler"
 	if [[ $cleanup == YES ]] || [[ $cleanup == Yes ]] || [[ $cleanup == yes ]] || [[ $cleanup == Y ]] || [[ $cleanup == y ]]
 	then
 		rm -rf "$current"
@@ -73,7 +73,7 @@ if [[ $downscale ]]
 then
 	next="enhace-video-downscaled"
 	mkdir "$next"
-	ffmpeg -pattern_type glob -i "$current/*.png" -filter:v scale=$downscale:sws_flags=lanczos "$next/%08d.png"
+	../Tool/ffmpeg -pattern_type glob -i "$current/*.png" -filter:v scale=$downscale:sws_flags=lanczos "$next/%08d.png"
 	if [[ $cleanup == YES ]] || [[ $cleanup == Yes ]] || [[ $cleanup == yes ]] || [[ $cleanup == Y ]] || [[ $cleanup == y ]]
 	then
 		rm -rf "$current"
@@ -87,7 +87,7 @@ do
 	(( factor = factor * 2 ))
 	next="enhance-video-x$factor"
 	mkdir "$next"
-	./rife-ncnn-vulkan -i "$current" -o "$next"
+	../Tool/rife-ncnn-vulkan -i "$current" -o "$next"
 	if [[ $cleanup == YES ]] || [[ $cleanup == Yes ]] || [[ $cleanup == yes ]] || [[ $cleanup == Y ]] || [[ $cleanup == y ]]
 	then
 		rm -rf "$current"
@@ -115,7 +115,7 @@ else
 	encoding="-c:v libx264 -preset fast -crf 20 -pix_fmt yuv420p"
 fi
 
-ffmpeg -framerate "$tFPS" -pattern_type glob -i "$current/*.png" \
+../Tool/ffmpeg -framerate "$tFPS" -pattern_type glob -i "$current/*.png" \
 	-colorspace smpte170m -color_primaries smpte170m -color_trc smpte170m \
 	$filter $encoding "$output"
 
