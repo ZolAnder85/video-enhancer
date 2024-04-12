@@ -12,15 +12,75 @@ The format of the downscale parameter comes from FFmpeg:
 - Example for absolute resizing: `1920:-1`
 Keep in mind that some encodings require even numbers for width and height.
 
-# Special Thanks
+# Creadits
+
+# Original Real-ESRGAN Research
+
+Xintao Wang
+https://xinntao.github.io/
+https://github.com/xinntao/ESRGAN
+https://github.com/xinntao/Real-ESRGAN
+https://arxiv.org/abs/1809.00219
+
+# Original RIFE Research
+
+hzwer
+https://github.com/hzwer
+https://github.com/hzwer/ECCV2022-RIFE
+https://arxiv.org/abs/2011.06294
+
+# Implementations
+
+Nihui
+https://github.com/nihui
+https://github.com/nihui/realsr-ncnn-vulkan
+https://github.com/nihui/rife-ncnn-vulkan
 
 Xintao Wang
 https://xinntao.github.io/
 https://github.com/xinntao/Real-ESRGAN-ncnn-vulkan
 
-Nihui
-https://github.com/nihui
-https://github.com/nihui/rife-ncnn-vulkan
-
-FFmpeg developers
+FFmpeg Developers
 https://ffmpeg.org/
+
+# Upscaler Models
+
+Big part of the models were selected by Upscayl:
+https://github.com/upscayl
+https://github.com/upscayl/custom-models
+
+Xintao Wang
+https://xinntao.github.io/
+https://github.com/xinntao/ESRGAN
+https://github.com/xinntao/Real-ESRGAN
+- ESRGAN
+- RealESRGAN-V3
+- RealESRGAN-WDN
+- RealESR-AnimeVideoV3
+- RealESRNET
+
+Phhofm
+https://github.com/Phhofm
+https://github.com/Phhofm/models
+- LSDIR
+- LSDIR-Plus-N
+- LSDIR-Plus-C
+- LSDIR-Compact-N3
+- LSDIR-Compact-C3
+- Nomos8KSC
+- HFA2K
+
+N00MKRAD
+https://nmkd.de/?esrgan
+https://github.com/n00mkrad
+- NMKD-Siax-200K
+- NMKD-Superscale-SP-178000-G
+
+Kim2091
+https://github.com/Kim2091
+https://openmodeldb.info/users/kim2091
+- UltraSharp
+
+FoolhardyVEVO
+https://openmodeldb.info/users/foolhardy
+- Remacri
