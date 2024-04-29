@@ -17,7 +17,7 @@ Keep in mind that some encodings require even numbers for width and height.
 
 # Credits
 
-# Original Real-ESRGAN Research
+## Original ESRGAN Research
 
 ### Xintao Wang
 
@@ -26,7 +26,7 @@ https://github.com/xinntao/ESRGAN
 https://github.com/xinntao/Real-ESRGAN  
 https://arxiv.org/abs/1809.00219
 
-# Original RIFE Research
+## Original RIFE Research
 
 ### hzwer
 
@@ -34,7 +34,7 @@ https://github.com/hzwer
 https://github.com/hzwer/ECCV2022-RIFE  
 https://arxiv.org/abs/2011.06294
 
-# Implementations
+## Implementations
 
 ### Nihui
 
@@ -51,7 +51,7 @@ https://github.com/xinntao/Real-ESRGAN-ncnn-vulkan
 
 https://ffmpeg.org/
 
-# Upscaler Models
+## Upscaler Models
 
 Big part of the models were selected by Upscayl:  
 https://github.com/upscayl  
