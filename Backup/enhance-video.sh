@@ -61,7 +61,7 @@ if [[ $upscaler ]]
 then
 	next="enhace-video-upscaled"
 	mkdir "$next"
-	../Tool/realesrgan-ncnn-vulkan -i "$current" -o "$next" -n "$upscaler"
+	../Tool/realesrgan-ncnn-vulkan -i "$current" -o "$next" -m "../Tool/models" -n "$upscaler"
 	if [[ $cleanup == YES ]] || [[ $cleanup == Yes ]] || [[ $cleanup == yes ]] || [[ $cleanup == Y ]] || [[ $cleanup == y ]]
 	then
 		rm -rf "$current"
